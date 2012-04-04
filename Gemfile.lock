@@ -29,6 +29,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-webkit (0.11.0)
+      capybara (>= 1.0.0, < 1.2)
+      json
     childprocess (0.3.2)
       ffi (~> 1.0.6)
     daemons (1.1.8)
@@ -153,6 +156,7 @@ DEPENDENCIES
   bcrypt-ruby
   bson_ext
   capybara
+  capybara-webkit
   data_mapper
   dm-aggregates
   dm-core

@@ -33,4 +33,5 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'rack-test'
+  gem 'capybara-webkit'
 end
