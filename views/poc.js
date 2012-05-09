@@ -1,0 +1,3 @@
+function pgo(){
+	alert('pgo')
+}
