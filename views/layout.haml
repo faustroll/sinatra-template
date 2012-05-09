@@ -3,7 +3,8 @@
   %head
     %title= @title || SiteConfig.title
     %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
-  %body
+    %script{:type => "text/javascript"}
+  %body{:onload => }
     #container
       #header
         #logo
