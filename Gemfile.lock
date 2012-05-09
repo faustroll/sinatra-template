@@ -1,8 +1,27 @@
+GIT
+  remote: git://github.com/nmerouze/machinist_mongo.git
+  revision: fa4819c4e1233a4e3ce527b68af8aeee85dfc6c3
+  branch: machinist2
+  specs:
+    machinist_mongo (2.0.0.beta.1)
+      machinist (~> 2.0.0.beta2)
+
 GEM
   remote: http://rubygems.org/
   specs:
+    activemodel (3.2.3)
+      activesupport (= 3.2.3)
+      builder (~> 3.0.0)
+    activesupport (3.2.3)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
     addressable (2.2.6)
+    backports (2.5.1)
     bcrypt-ruby (2.1.4)
+    bson (1.6.2)
+    bson_ext (1.6.2)
+      bson (~> 1.6.2)
+    builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -15,6 +34,7 @@ GEM
       json
     childprocess (0.3.2)
       ffi (~> 1.0.6)
+    daemons (1.1.8)
     data_mapper (1.1.0)
       dm-aggregates (= 1.1.0)
       dm-constraints (= 1.1.0)
@@ -61,13 +81,27 @@ GEM
       dm-core (~> 1.1.0)
     do_sqlite3 (0.10.6)
       data_objects (= 0.10.6)
+    eventmachine (0.12.10)
+    faker (1.0.1)
+      i18n (~> 0.4)
     fastercsv (1.5.4)
     ffi (1.0.11)
     haml (3.1.2)
+    i18n (0.6.0)
     json (1.4.6)
+    json_pure (1.7.0)
     libwebsocket (0.1.3)
       addressable
+    machinist (2.0)
     mime-types (1.18)
+    mongo (1.6.2)
+      bson (~> 1.6.2)
+    mongoid (2.4.9)
+      activemodel (~> 3.1)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
+    monkey-lib (0.5.4)
+      backports
     multi_json (1.3.4)
     nokogiri (1.5.2)
     rack (1.3.0)
@@ -94,8 +128,23 @@ GEM
     sinatra (1.2.6)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
+    sinatra-advanced-routes (0.5.1)
+      monkey-lib (~> 0.5.0)
+      sinatra (~> 1.0)
+      sinatra-sugar (~> 0.5.0)
+    sinatra-reloader (0.5.0)
+      sinatra (~> 1.0)
+      sinatra-advanced-routes (~> 0.5.0)
+    sinatra-sugar (0.5.1)
+      monkey-lib (~> 0.5.0)
+      sinatra (~> 1.0)
     stringex (1.2.1)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     tilt (1.3.2)
+    tzinfo (0.3.33)
     uuidtools (2.1.2)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -104,6 +153,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
+  bson_ext
   capybara
   capybara-webkit
   data_mapper
@@ -113,9 +164,16 @@ DEPENDENCIES
   dm-sqlite-adapter
   dm-timestamps
   dm-validations
+  faker
   haml
+  json_pure
+  machinist
+  machinist_mongo!
+  mongoid
   rack-test
   rake
   rspec
   shotgun
-  sinatra (>= 1.0)
+  sinatra
+  sinatra-reloader
+  thin
