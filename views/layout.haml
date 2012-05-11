@@ -3,8 +3,9 @@
   %head
     %title= @title || SiteConfig.title
     %link{:href => '/main.css', :rel => 'stylesheet', :type => 'text/css'}
-    %script{:type => "text/javascript"}
-  %body{:onload => }
+    %script{:type => "text/javascript", :src => "/javascript/d3/d3.v2.js"}
+    %script{:type => "text/javascript", :src => "/javascript/poctst/poc.js"}
+  %body{:onload => "foo_bar_bash()"}
     #container
       #header
         #logo
