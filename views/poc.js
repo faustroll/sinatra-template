@@ -1,3 +1,0 @@
-function pgo(){
-	alert('pgo')
-}
